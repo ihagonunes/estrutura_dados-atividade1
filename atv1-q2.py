@@ -15,10 +15,17 @@
 # 
 # d) O programa não pode usar recursividade.
 
+from random import randint
 
 n = int(input(f"Digite a quantidade de inteiros para o vetor"))
-a = [1]*3
-#for i in range(n):
-    
- 
+a = []
+freq = [0]*n
+
+for i in range(n):
+    #aux = int(input(f"Digite um valor para o endereço {i} do vetor"))
+    aux = randint(0, 4*n)
+    for j in range(i):
+        if aux == a[i]: 
+            freq[j]+=1
+            freq[i]+=freq[j]
 print(a)
