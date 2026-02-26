@@ -19,13 +19,27 @@ from random import randint
 
 n = int(input(f"Digite a quantidade de inteiros para o vetor"))
 a = []
-freq = [0]*n
+freq = {}
+valoresRepetidos = []
 
 for i in range(n):
-    #aux = int(input(f"Digite um valor para o endereço {i} do vetor"))
-    aux = randint(0, 4*n)
-    for j in range(i):
-        if aux == a[i]: 
-            freq[j]+=1
-            freq[i]+=freq[j]
-print(a)
+    aux = int(input(f"Digite um valor para o endereço {i} do vetor"))
+    #aux = randint(0, 4*n)
+    a.append(aux) 
+    freq[a[i]] = freq.get(a[i], 0) + 1
+    if i  == 0: 
+        valoresRepetidos.append(aux)
+    
+    elif(freq.get(a[i]) > freq.get(valoresRepetidos[0])): # comparando as frequência puxando o value através das keys
+        valoresRepetidos = [] # limpa valores repetidos com freq. menores
+        valoresRepetidos.append(a[i])
+        
+    elif(freq.get(a[i]) == freq.get(valoresRepetidos[0])):
+        valoresRepetidos.append(a[i])
+
+if(len(valoresRepetidos) > 1):
+    print(f"Há mais de um valor com a maior frequência ({freq.get(valoresRepetidos[0])}). Os valores são: {valoresRepetidos}")
+
+else:
+    print(f"A maior frequência é {freq.get(valoresRepetidos[0])} do valor {valoresRepetidos[0]}")
+    
