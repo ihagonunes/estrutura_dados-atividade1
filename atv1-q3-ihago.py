@@ -1,0 +1,61 @@
+<<<<<<< HEAD
+class Livro: 
+    def __init__(self, titulo: str, autor: str, disponivel: bool = True):
+=======
+from random import randint
+
+class livro:
+    def __init__(self,titulo = "", autor = "", disponivel = True):
+>>>>>>> 515168148f90abb28f1e0e6de6a1adb8b47d609c
+        self.titulo = titulo
+        self.autor = autor
+        self.disponivel = disponivel
+        
+    def __str__(self):
+<<<<<<< HEAD
+        if self.disponivel: return f'Livro {self.titulo} de {self.autor} (disponível)'
+        else: return f'Livro {self.titulo} de {self.autor} (indisponível)'
+        
+    def emprestar(self):
+        if self.disponivel == True:
+            self.disponivel = False
+            print(f"Livro {self.titulo} emprestado com sucesso!")
+        else: print(f"Livro {self.titulo} não está disponível")
+        
+    def devolver(self):
+        if not self.disponivel:
+            self.disponivel = True
+        else: print(f"Livro {self.titulo} não foi emprestado")
+        
+class Usuario:
+    def __init__(self, ra: int, nome:  str, livrosEmprestados: list):
+        self.ra = ra
+        self.nome = nome
+        self.livrosEmprestados = livrosEmprestados
+    
+
+class Biblioteca:
+    def __init__(self, listaLivros: list, listaUsuarios: list):
+        self.listaLivros = listaLivros
+        self.listaUsuarios = listaUsuarios
+        
+livro1 = Livro("Meu Livro", "Franz Kafka")
+livro1.emprestar()
+livro1.devolver()
+print(livro1)
+livro1.devolver()
+=======
+        return f"Titulo: {self.titulo}, Autor: {self.autor}, Disponivel: {self.disponivel}"
+    
+class Usuario:
+    def __init__(self, ra = randint(100,999), nome = "", lista= []):
+        self.ra = ra
+        self.nome = nome
+        self.lista = lista
+
+class Biblioteca:
+    def __init__(self, listLivros = [], listUsuario = []):
+        self.listLivros = listLivros
+        self.listUsuario = listUsuario
+        
+>>>>>>> 515168148f90abb28f1e0e6de6a1adb8b47d609c
