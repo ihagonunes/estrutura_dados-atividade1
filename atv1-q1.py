@@ -15,6 +15,8 @@ encontre tal valor, ou "Nenhum elemento é a soma de dois anteriores." caso cont
 d) O programa não pode usar recursividade
 """
 
+#A ordem de complexidade desse codigo e O(n^3), por mais que haja algumas tentativas de diminuir a complexidade no segundo e terceiro for o pior caso ainda permanece em n^3
+
 def IhanBraboSelmineVaimedarDeznaProvaSemCorrigir(lista):
     if(len(lista)>=3):
         for i in range (2,len(lista)):
@@ -27,4 +29,12 @@ def IhanBraboSelmineVaimedarDeznaProvaSemCorrigir(lista):
     else:
         return "Não há elementos suficientes"
 
-print(IhanBraboSelmineVaimedarDeznaProvaSemCorrigir([8, 1, 6, 2, 9]))#atencion
+
+cont = int(input("Insira o numero de elementos: "))
+
+aux = []
+
+for i in range(cont):
+    aux.append(int(input(f"Insira o {i+1}º  elemento: ")))
+
+print(IhanBraboSelmineVaimedarDeznaProvaSemCorrigir(aux))
