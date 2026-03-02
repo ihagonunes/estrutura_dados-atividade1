@@ -15,7 +15,7 @@ class Livro:
         if self.disponivel == True:
             self.disponivel = False
             print(f"Livro {self.titulo} emprestado com sucesso!")
-        else: print(f"Livro {self.titulo} não está disponível")
+        else: print(f"Livro {self.titulo} não está disponível para empréstimo")
         
     def devolver(self):
         if not self.disponivel:
@@ -36,6 +36,8 @@ class Biblioteca:
         
 livro1 = Livro("Meu Livro", "Franz Kafka")
 livro1.emprestar()
+
+print(livro1)
 livro1.devolver()
 print(livro1)
 livro1.devolver()
