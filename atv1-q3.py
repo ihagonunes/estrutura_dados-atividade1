@@ -63,6 +63,7 @@ class Biblioteca:
         
     def realizar_emprestimo(self, ra: int, tituloLivro: str):
         usuarioEncontrado = None
+        
         for usuarioCadastrado in self.listaUsuarios:
             if usuarioCadastrado.ra == ra:
                 usuarioEncontrado = usuarioCadastrado
@@ -70,7 +71,7 @@ class Biblioteca:
             
         livroEncontrado = None
         for livroCadastrado in self.listaLivros:
-            if livroCadastrado == tituloLivro:
+            if livroCadastrado.titulo == tituloLivro:
                 livroEncontrado = livroCadastrado
                 break
         
